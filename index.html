@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FieldQuote — paste a messy job, send a SoCal trade quote today. HVAC, plumbing, electrical, garage door.">
+  <title>FieldQuote — Paste the job. Send a quote today.</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23e25a12' width='32' height='32'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='12' font-weight='800' fill='%231a0d06' font-family='sans-serif'%3EFQ%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="tape" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <span class="mark">FQ</span>
+        FieldQuote
+      </a>
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a class="nav-cta" href="#generator">Generate a quote</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div>
+          <p class="eyebrow">Southern California trades</p>
+          <h1>Paste the job. Send a quote today.</h1>
+          <p class="lede">For HVAC, plumbing, electrical, and garage-door shops that lose jobs because the quote went out tomorrow.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#generator">Generate a quote</a>
+            <p class="price-note"><strong>First quotes are free.</strong> No booking form. Scroll and try it.</p>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <div>Works offline <span>Runs in your browser. No account.</span></div>
+          <div>Print or PDF <span>Work-order layout you can send today.</span></div>
+          <div>You set the number <span>Labor rate and markup stay yours.</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="benefits" id="benefits">
+      <div class="wrap">
+        <p class="sec-kicker">Why it exists</p>
+        <h2>Three things. That’s the product.</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Faster quotes</h3>
+            <p>Paste the inbound text. Get a print-ready estimate in under a minute instead of after dinner.</p>
+          </article>
+          <article class="card">
+            <h3>Looks legit</h3>
+            <p>Shop header, line items, range, terms, signature line. Something you can text or print without looking sloppy.</p>
+          </article>
+          <article class="card">
+            <h3>You still set the price</h3>
+            <p>FieldQuote drafts labor hours and SoCal ballpark materials. You change the rate, markup, and total before it goes out.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="how">
+      <div class="wrap">
+        <p class="sec-kicker">How it works</p>
+        <h2>Paste. Review. Send.</h2>
+        <p class="sec-sub">No login. No AI call. The engine reads keywords in your notes and builds a work order you can edit with your own numbers.</p>
+        <div class="grid-3">
+          <article class="card">
+            <span class="num">01</span>
+            <h3>Paste the job</h3>
+            <p>The voicemail, the text, the “40 gal leaking in Corona, this weekend.” Keep it messy.</p>
+          </article>
+          <article class="card">
+            <span class="num">02</span>
+            <h3>Review the draft</h3>
+            <p>Line items, markup, a ±15% range, exclusions, 14-day validity, 50% to schedule.</p>
+          </article>
+          <article class="card">
+            <span class="num">03</span>
+            <h3>Print or copy</h3>
+            <p>Print / Save PDF from the browser dialog, or copy the text into a message. Then you send it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="pricing" id="pricing">
+      <div class="wrap">
+        <p class="sec-kicker">Pricing</p>
+        <h2>First quotes are free.</h2>
+        <p class="sec-sub">This page does not take cards. There is no checkout here.</p>
+        <div class="price-box">
+          <div>
+            <span class="tag">Use it now</span>
+            <h3>Generator — free</h3>
+            <p>Run as many drafts as you want in this browser. First quotes for your shop are free. Nothing is billed.</p>
+          </div>
+          <div>
+            <span class="tag">Later, if you want</span>
+            <h3>We write it — Venmo</h3>
+            <p>If a shop wants FieldQuote to write the quote for them, pay later via Venmo. We will send a link when that is set up — not on this page.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="generator">
+      <div class="wrap">
+        <p class="sec-kicker">Live demo</p>
+        <h2 class="gen-copy">Write the quote.</h2>
+        <p class="sec-sub gen-copy">Tap a SoCal example or paste a real job. Numbers are labeled ESTIMATE. You still own the price.</p>
+        <div class="gen-layout">
+          <div class="panel">
+            <h3>Job</h3>
+            <p class="hint" style="margin-bottom:10px">Click a chip to fill and generate instantly.</p>
+            <div class="chips" id="chips"></div>
+            <form id="quote-form">
+              <div class="fields">
+                <div class="row-2">
+                  <label>Shop name
+                    <input id="shop" name="shop" type="text" placeholder="Your shop" autocomplete="organization">
+                  </label>
+                  <label>Phone
+                    <input id="phone" name="phone" type="tel" placeholder="(951) 555-0100" autocomplete="tel">
+                  </label>
+                </div>
+                <div class="row-3">
+                  <label>City
+                    <input id="city" name="city" type="text" value="Corona, CA" placeholder="Corona, CA">
+                  </label>
+                  <label>Hourly labor
+                    <input id="rate" name="rate" type="number" min="1" step="1" value="125">
+                  </label>
+                  <label>Material markup %
+                    <input id="markup" name="markup" type="number" min="0" step="1" value="25">
+                  </label>
+                </div>
+                <div class="row-2">
+                  <label>Trade
+                    <select id="trade" name="trade">
+                      <option value="hvac">HVAC</option>
+                      <option value="plumbing">Plumbing</option>
+                      <option value="electrical">Electrical</option>
+                      <option value="garage">Garage door</option>
+                      <option value="general">General</option>
+                    </select>
+                  </label>
+                  <label>Customer name (optional)
+                    <input id="customer" name="customer" type="text" placeholder="Optional">
+                  </label>
+                </div>
+                <label>Job notes
+                  <textarea id="notes" name="notes" placeholder="water heater leaking, 40 gal, Corona, wants it this weekend"></textarea>
+                </label>
+                <p class="warn" id="notes-warn">Paste the job — e.g. “water heater leaking, 40 gal, Corona, wants it this weekend.”</p>
+                <div class="actions">
+                  <button class="btn btn-primary" id="generate" type="submit" disabled>Generate quote</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div class="quote-wrap" id="quote">
+              <div class="quote-empty">
+                <strong>No quote yet.</strong>
+                Paste a job on the left — or tap an example chip — then generate.
+              </div>
+            </div>
+            <div class="quote-actions" id="quote-actions" hidden>
+              <button class="btn btn-paper" type="button" id="btn-print">Print</button>
+              <button class="btn btn-paper" type="button" id="btn-pdf">Save PDF</button>
+              <button class="btn btn-ghost" type="button" id="btn-copy">Copy text</button>
+              <button class="btn btn-ghost" type="button" id="btn-new">New quote</button>
+              <p class="hint" style="flex-basis:100%">Save PDF opens the print dialog — choose “Save as PDF.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <p><strong>FieldQuote drafts an estimate.</strong> The contractor reviews price, licenses, and terms before sending. FieldQuote is not a licensed contractor. Built for Southern California trade shops — Corona, Riverside, Eastvale, Norco, and nearby.</p>
+      <p>No paid checkout on this site. First quotes are free. Written-for-you quotes, if you want them, are Venmo later. © <span id="y"></span> FieldQuote.</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
