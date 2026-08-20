@@ -23,6 +23,7 @@
       </nav>
     </div>
   </header>
+
   <main id="top">
     <section class="hero">
       <div class="wrap hero-inner">
@@ -42,6 +43,7 @@
         </div>
       </div>
     </section>
+
     <section class="benefits" id="benefits">
       <div class="wrap">
         <p class="sec-kicker">Why it exists</p>
@@ -62,6 +64,7 @@
         </div>
       </div>
     </section>
+
     <section id="how">
       <div class="wrap">
         <p class="sec-kicker">How it works</p>
@@ -86,6 +89,7 @@
         </div>
       </div>
     </section>
+
     <section class="pricing" id="pricing">
       <div class="wrap">
         <p class="sec-kicker">Pricing</p>
@@ -99,17 +103,54 @@
           </div>
           <div>
             <span class="tag">Later, if you want</span>
-            <h3>We write it — Venmo</h3>
-            <p>If a shop wants FieldQuote to write the quote for them, pay later via Venmo. We will send a link when that is set up — not on this page.</p>
+            <h3>We write it — PayPal</h3>
+            <p>If a shop wants FieldQuote to write the quote for them, pay later via PayPal. We will send a PayPal link when that is set up — not on this page.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <section id="leads">
+      <div class="wrap lead">
+        <div>
+          <p class="sec-kicker">Shops</p>
+          <h2>Leave a shop name. Stay local.</h2>
+          <p class="sec-sub">Stored only in this browser (localStorage). Nothing is emailed anywhere from this page. Use it if you want a reminder that you tried FieldQuote.</p>
+        </div>
+        <div>
+        <form class="lead-form" id="lead-form">
+          <label>Email
+            <input id="lead-email" name="email" type="email" required placeholder="shop@example.com" autocomplete="email">
+          </label>
+          <label>Shop name
+            <input id="lead-shop" name="shop" type="text" required placeholder="Corona Heating &amp; Air" autocomplete="organization">
+          </label>
+          <label>Trade
+            <select id="lead-trade" name="trade" required>
+              <option value="hvac">HVAC</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="electrical">Electrical</option>
+              <option value="garage">Garage door</option>
+              <option value="general">General</option>
+            </select>
+          </label>
+          <button class="btn btn-primary" type="submit">Save in this browser</button>
+          <p class="hint">No backend. We cannot see this form from the internet.</p>
+        </form>
+        <div class="lead-thanks" id="lead-thanks">
+          <h3>Got it.</h3>
+          <p>Your shop is saved in this browser only. Nobody got an email. When PayPal for written quotes is ready, it will be a separate, honest ask — not a blast list.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
     <section id="generator">
       <div class="wrap">
         <p class="sec-kicker">Live demo</p>
         <h2 class="gen-copy">Write the quote.</h2>
         <p class="sec-sub gen-copy">Tap a SoCal example or paste a real job. Numbers are labeled ESTIMATE. You still own the price.</p>
+
         <div class="gen-layout">
           <div class="panel">
             <h3>Job</h3>
@@ -160,6 +201,7 @@
               </div>
             </form>
           </div>
+
           <div>
             <div class="quote-wrap" id="quote">
               <div class="quote-empty">
@@ -179,10 +221,11 @@
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="wrap foot-grid">
       <p><strong>FieldQuote drafts an estimate.</strong> The contractor reviews price, licenses, and terms before sending. FieldQuote is not a licensed contractor. Built for Southern California trade shops — Corona, Riverside, Eastvale, Norco, and nearby.</p>
-      <p>No paid checkout on this site. First quotes are free. Written-for-you quotes, if you want them, are Venmo later. © <span id="y"></span> FieldQuote.</p>
+      <p>No paid checkout on this site. First quotes are free. Written-for-you quotes, if you want them, are PayPal later. © <span id="y"></span> FieldQuote.</p>
     </div>
   </footer>
   <script src="app.js"></script>
