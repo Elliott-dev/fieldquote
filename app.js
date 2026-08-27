@@ -112,7 +112,7 @@
     var t = (notes || "").toLowerCase();
     return {
       text: t,
-      emergency: /emergency|asap|urgent|come today|today\b|right away|now\b/.test(t),
+      emergency: /emergency|asap|urgent|come today|right away|same.?day/.test(t),
       weekend: /weekend|saturday|sunday|after.?hours/.test(t),
       leak: /leak/.test(t),
       install: /install|new |replace|replacement|swap/.test(t),
@@ -274,13 +274,6 @@
           ? "Weekend / after-hours dispatch"
           : "Same-day / emergency dispatch";
       items.push(item(label, 1, "ea", fee, "surcharge"));
-    }
-
-    // Cap at 6: keep first materials/labor, drop extras from the end except surcharge
-    if (items.length > 6) {
-      var surcharge = items.filter(function (x) { return x.kind === "surcharge"; });
-      var core = items.filter(function (x) { return x.kind !== "surcharge"; }).slice(0, 6 - surcharge.length);
-      items = core.concat(surcharge);
     }
 
     return items;
